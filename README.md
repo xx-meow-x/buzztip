@@ -4,7 +4,10 @@ A campus community app for TIP: chats, course group chats, groups, a campus feed
 announcements, events, reminders, a marketplace, lost & found and a freedom wall.
 
 This is the **client-side prototype**. Everything is saved in the browser
-(localStorage). There is no server or database yet.
+(localStorage). There is no server or database yet. 
+
+Everything you need to run it is detailed below :-).
+
 
 ## Run it
 
