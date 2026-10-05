@@ -1,4 +1,4 @@
-/* BuzzTip global styles. Colors live in the tokens below; change them once and every screen follows. */
+/* BuzzTip global styles */
 #root{height:100%;width:100%;display:flex;align-items:center;justify-content:center}
 :root{
   --bg:#F7F2E2; --stage:#EBE3C8; --surface:#FFFDF6; --surface-2:#F1E9CC;
@@ -70,6 +70,18 @@ h1{font-family:var(--font-display);font-weight:800;font-size:2.4rem;letter-spaci
 .btn.primary{background:var(--accent);color:var(--accent-ink)}
 .btn.secondary{background:transparent;color:var(--accent-text)}
 .btn:active{transform:scale(.98)}
+
+/* Splashscreen */
+.splash{background:var(--bg);transition:opacity .4s ease}
+.splash.leaving{opacity:0}
+.splash-logo{animation:splashPulse 2.2s ease-in-out infinite}
+@keyframes splashPulse{
+  0%,100%{box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 45%,transparent)}
+  50%{box-shadow:0 0 0 10px color-mix(in srgb,var(--accent) 0%,transparent)}
+}
+@media (prefers-reduced-motion:reduce){
+  .splash-logo{animation:none}
+}
 
 /* Forms */
 .form-wrap{padding:8px 28px 32px;display:flex;flex-direction:column}
