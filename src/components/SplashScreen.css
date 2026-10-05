@@ -1,0 +1,20 @@
+.splash {
+  background: var(--bg);
+  transition: opacity .4s ease;
+}
+.splash.leaving {
+  opacity: 0;
+}
+
+.splash-logo {
+  animation: splashPulse 2.2s ease-in-out infinite;
+}
+
+@keyframes splashPulse {
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 45%, transparent); }
+  50%      { box-shadow: 0 0 0 10px color-mix(in srgb, var(--accent) 0%, transparent); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .splash-logo { animation: none; }
+}
