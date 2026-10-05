@@ -1,7 +1,9 @@
+import { useState } from 'react'                         
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { RequireAuth } from './components/RequireAuth'
 import { Toast } from './components/Toast'
 import { SheetHost } from './sheets'
+import SplashScreen from './components/SplashScreen'     
 import Welcome from './screens/Welcome'
 import Register from './screens/Register'
 import Login from './screens/Login'
@@ -34,6 +36,8 @@ const PROTECTED = [
 ]
 
 export default function App() {
+  const [booting, setBooting] = useState(true)          
+
   return (
     <main className="phone">
       <Routes>
@@ -47,6 +51,7 @@ export default function App() {
       </Routes>
       <SheetHost />
       <Toast />
+      {booting && <SplashScreen onFinish={() => setBooting(false)} />} 
     </main>
   )
 }
